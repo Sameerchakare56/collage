@@ -36,6 +36,10 @@ class CameraManager:
     def initialize_camera(self, index=0):
         """Initialize camera using OpenCV VideoCapture"""
         self.cap = cv2.VideoCapture(index)
+        #cap = cv2.VideoCapture("rtsp://username:password@ip_address:port/stream_path")
+        #rtsp_url = "rtsp://username:password@192.168.1.10:554/stream1"
+        #cap = cv2.VideoCapture(rtsp_url)
+        
         if self.cap.isOpened():
             self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
             self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
